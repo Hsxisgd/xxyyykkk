@@ -1,15 +1,24 @@
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+
 / {
-    aliases {
-        kbd0 = &kbd0;
-    };
-    kbd0: keyboard {
-        compatible = "zmk,matrix-keymap";
-        row-gpios = <&gpio0 6 GPIO_ACTIVE_LOW>,
-                    <&gpio0 7 GPIO_ACTIVE_LOW>,
-                    <&gpio0 8 GPIO_ACTIVE_LOW>;
-        col-gpios = <&gpio1 0 GPIO_ACTIVE_LOW>,
-                    <&gpio1 1 GPIO_ACTIVE_LOW>,
-                    <&gpio1 2 GPIO_ACTIVE_LOW>,
-                    <&gpio1 3 GPIO_ACTIVE_LOW>;
+    keymap {
+        compatible = "zmk,keymap";
+        default_layer {
+            bindings = <
+                &kp UP
+                &kp DOWN
+                &kp LEFT
+                &kp RIGHT
+                &kp KP_1
+                &kp KP_2
+                &kp KP_3
+                &kp KP_4
+                &kp KP_5
+                &kp KP_6
+                &kp ENTER
+                &kp NOP
+            >;
+        };
     };
 };
